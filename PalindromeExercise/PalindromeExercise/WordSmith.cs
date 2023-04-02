@@ -3,17 +3,20 @@ namespace PalindromeExercise
 {
 	public class WordSmith
 	{
+		public WordSmith()
+		{
+		}
       
         public bool IsAPalindrome(string word)
 		{
-			var reversed = "";
+			var reversed = ""; //This is the same thing as using string.Empty;
 
-			for (int i = word.Length-1; i >= 0;  i++)
+			for (var i = word.Length - 1; i >= 0; i--)
 			{
-				reversed += word[i];
+				reversed += word.ToLower()[i];
 			}
 
-			if(reversed.ToLower() == word.ToLower())
+			if (reversed == word.ToLower())
 			{
 				return true;
 			}
